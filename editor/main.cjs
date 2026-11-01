@@ -26,7 +26,7 @@ function write(data){
 }
 function start(){
  const win=new BrowserWindow({width:1320,height:840,minWidth:850,minHeight:600,webPreferences:{preload:path.join(__dirname,'preload.cjs'),contextIsolation:true,nodeIntegration:false,sandbox:false}});
- win.loadFile(path.join(__dirname,'index.html'));
+ win.loadFile(path.join(__dirname,'studio.html'));
 }
 ipcMain.handle('choose-folder',async()=>{
  const result=await dialog.showOpenDialog({properties:['openDirectory'],title:'Select your realm-wiki repository folder'});
