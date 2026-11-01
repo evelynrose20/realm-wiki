@@ -3,6 +3,7 @@
 'Racial Homelands':{label:'Racial Homeland',sections:['Overview','Geography','Settlements and Landmarks','History','Associated People']},
 'Major Cities':{label:'Major City',sections:['Overview','Districts and Landmarks','People and Culture','Services and Activities','History']},
 'Regions & Locations':{label:'Region / Location',sections:['Overview','Geography','Landmarks','Settlements','Inhabitants','History']},
+'Lore':{label:'Lore & Legends',sections:['Overview','Origins','Key Figures','History and Legacy']},
 'World Forges':{label:'World Forge',sections:['Overview','Classification','History and Purpose','Associated Locations','Quests and Lore']}
 };
 function infoBox(a){const meta=a.infobox||{};const tmpl=PAGE_TEMPLATES[a.category];if(!tmpl&&!a.infobox)return '';return '<aside class="infobox wiki-profile-box"><div class="infobox-header">'+esc(a.title)+'</div>'+(a.image?'<div class="wiki-profile-art"><img src="'+esc(a.image)+'" alt="'+esc(a.title)+'"></div>':'<div class="wiki-profile-art placeholder"><span>✧</span><small>Artwork not added</small></div>')+'<div class="infobox-label">'+esc(tmpl?.label||'AT A GLANCE')+'</div>'+Object.entries(meta).map(([k,v])=>'<div class="infobox-row"><b>'+esc(k)+'</b><span>'+esc(v)+'</span></div>').join('')+'</aside>'}
