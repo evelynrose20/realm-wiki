@@ -4,5 +4,6 @@ contextBridge.exposeInMainWorld('wiki',{
  load:()=>ipcRenderer.invoke('load-data'),
  save:data=>ipcRenderer.invoke('save-data',data),
  preview:()=>ipcRenderer.invoke('preview'),
- path:()=>ipcRenderer.invoke('path')
+ path:()=>ipcRenderer.invoke('path'),
+ importImage:()=>ipcRenderer.invoke('import-image')
 });
