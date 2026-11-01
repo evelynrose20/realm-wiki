@@ -16,6 +16,7 @@ const ARTICLE_TEMPLATES={
 'Racial Homeland':{category:'Racial Homelands',fields:{Type:'Racial homeland','Associated race':'To be determined',Status:'In development'},sections:['Overview','Geography','Settlements and Landmarks','History','Associated People']},
 'Major City':{category:'Major Cities',fields:{Type:'Major city',Epithet:'To be determined','Associated races':'To be determined',Status:'In development'},sections:['Overview','Districts and Landmarks','People and Culture','Services and Activities','History']},
 'Region / Location':{category:'Regions & Locations',fields:{Type:'Region / Location',Access:'To be determined',Status:'In development'},sections:['Overview','Geography','Landmarks','Settlements','Inhabitants','History']},
+'Lore & Legends':{category:'Lore',fields:{Type:'Lore entry',Status:'In development'},sections:['Overview','Origins','Key Figures','History and Legacy']},
 'World Forge':{category:'World Forges',fields:{Classification:'To be determined',Status:'In development'},sections:['Overview','Classification','History and Purpose','Associated Locations','Quests and Lore']}
 };
 const getPatchRows=()=>db.patchCatalog.flatMap((era,ei)=>era.entries.flatMap((patch,pi)=>[{id:ei+':'+pi+':major',label:patch.version+' — '+patch.title,kind:'Major patch',ei,pi,si:-1},...(patch.subpatches||[]).map((sub,si)=>({id:ei+':'+pi+':'+si,label:sub.version+' — '+(sub.title||patch.title),kind:'Sub-patch',ei,pi,si}))]));
