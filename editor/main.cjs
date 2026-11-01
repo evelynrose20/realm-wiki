@@ -38,6 +38,24 @@ ipcMain.handle('choose-folder',async()=>{
 ipcMain.handle('load-data',()=>{if(!folder)throw Error('Open a wiki folder first');return load()});
 ipcMain.handle('save-data',(_,data)=>{if(!folder)throw Error('Open a wiki folder first');return write(data)});
 ipcMain.handle('preview',async()=>{if(!folder)throw Error('Open a wiki folder first');await shell.openPath(path.join(folder,'index.html'));return true});
+ipcMain.handle('import-image',async()=>{
+ if(!folder)throw Error('Open a wiki folder first');
+ const selection=await dialog.showOpenDialog({title:'Choose wiki artwork',properties:['openFile'],filters:[{name:'Images',extensions:['png','jpg','jpeg','webp','gif']}]});
+ if(selection.canceled||!selection.filePaths.length)return null;
+ const source=selection.filePaths[0];
+ const ext=path.extname(source).toLowerCase();
+ const allowed=['.png','.jpg','.jpeg','.webp','.gif'];
+ if(!allowed.includes(ext))throw Error('Unsupported image file');
+ const stat=fs.statSync(source);
+ if(stat.size>15*1024*1024)throw Error('Image exceeds the 15 MB limit');
+ const assets=path.join(folder,'assets','uploads');
+ fs.mkdirSync(assets,{recursive:true});
+ const base=path.basename(source,ext).toLowerCase().replace(/[^a-z0-9-]+/g,'-').replace(/^-|-$/g,'').slice(0,56)||'artwork';
+ let candidate=base+ext,n=2;
+ while(fs.existsSync(path.join(assets,candidate))){candidate=base+'-'+n+ext;n++}
+ fs.copyFileSync(source,path.join(assets,candidate));
+ return 'assets/uploads/'+candidate;
+});
 ipcMain.handle('path',()=>folder);
 app.whenReady().then(start);
 app.on('window-all-closed',()=>{if(process.platform!=='darwin')app.quit()});
