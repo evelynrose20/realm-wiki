@@ -1,0 +1,30 @@
+name: Build Realm Wiki Editor (Windows)
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'editor/**'
+      - '.github/workflows/build-editor.yml'
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install editor dependencies
+        working-directory: editor
+        run: npm install
+      - name: Build portable Windows editor
+        working-directory: editor
+        run: npm run dist:win
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Realm-Wiki-Editor-Windows
+          path: editor/dist/*.exe
+          if-no-files-found: error

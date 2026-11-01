@@ -1,0 +1,4 @@
+# Local editor backups
+data/.editor-backups/
+editor/node_modules/
+editor/dist/

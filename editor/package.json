@@ -1,0 +1,22 @@
+{
+  "name": "realm-wiki-editor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Desktop content editor for the Realm Wiki",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^33.4.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.realmwiki.editor",
+    "productName": "Realm Wiki Editor",
+    "files": ["main.cjs", "preload.cjs", "index.html", "package.json"],
+    "win": {"target": ["portable"]},
+    "directories": {"output": "dist"}
+  }
+}
