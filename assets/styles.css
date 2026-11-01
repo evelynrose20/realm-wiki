@@ -46,3 +46,29 @@ a{color:#93c9e7}a:hover{color:#e3bd7e}
 .empty-page{background:#192b38;border-color:#364e5c}
 .empty-page h2{color:#e1edf2}.empty-page p{color:#aec4ce}
 @media(max-width:690px){.feature{border-bottom-color:#324754}}
+
+/* Dedicated FFXIV-inspired patch archive — dark theme */
+.patch-intro{max-width:1080px;color:#bfd0da;font-size:13px;line-height:1.75;margin-bottom:18px}
+.patch-intro p{margin:0 0 12px}.patch-legend{font-size:11px;color:#a9bec9}
+.patch-jump{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:13px 16px;background:#192b38;border:1px solid #354e5d;margin:22px 0 32px;font-size:12px}
+.patch-jump strong{color:#e4edf2;margin-right:7px;font-family:Cinzel,serif}
+.patch-jump a{background:#263e4e;border:1px solid #3d5968;padding:5px 11px;color:#afd9eb}
+.patch-jump a:hover{background:#345668}
+.patch-era{margin:28px 0 35px;scroll-margin-top:100px}
+.patch-era h2{font:600 23px Cinzel,Georgia,serif;color:#e8f0f4;border-bottom:1px solid #466074;padding-bottom:10px;margin-bottom:9px}
+.patch-era-desc{font-size:12px;color:#9fb6c2;margin:0 0 16px}
+.patch-table-scroll{overflow-x:auto;border:1px solid #38505e}
+.patch-table{width:100%;border-collapse:collapse;table-layout:fixed;background:#142431;font-size:12px}
+.patch-table th{background:#29465a;color:#e3edf2;text-align:left;padding:13px 15px;font-weight:700;border-right:1px solid #496172}
+.patch-table th:nth-child(1){width:30%}.patch-table th:nth-child(2){width:23%}.patch-table th:nth-child(3){width:31%}.patch-table th:nth-child(4){width:16%}
+.patch-table td{vertical-align:middle;padding:16px 15px;border-top:1px solid #354d5c;border-right:1px solid #304757;color:#ccdce5}
+.patch-table tr:nth-child(even){background:#192b38}.patch-name strong{display:block;font:600 16px Cinzel,serif;color:#a9d9f1;line-height:1.4}
+.patch-name small{display:block;margin-top:10px;line-height:1.6;color:#a9bfca;font-size:11px}
+.patch-title-card{min-height:110px;max-width:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;background:radial-gradient(ellipse at 50% 48%,#446277,#1a3244 70%,#0e1e2c);border:1px solid #8d7955;color:#d8c399;box-shadow:inset 0 0 0 4px #142a3a;font-family:Cinzel,serif;font-size:9px;letter-spacing:1px}
+.patch-card-sigil{font:52px Georgia,serif;line-height:.95;color:#d8c08b;text-shadow:0 0 16px #b99a65}
+.patch-title-card b{font-size:17px;color:#f1e5ca}
+.patch-release div{padding:5px 0;border-bottom:1px solid #2f4552}.patch-release div:last-child{border:0}
+.patch-release b{color:#b6d9e8}.patch-release span{color:#aabfc9}
+.patch-status{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.7px;white-space:nowrap;padding:5px 7px;border:1px solid #8b7555;color:#e3c99e;background:#3a3026}
+.patch-history-note{padding:14px 17px;background:#222d33;border-left:3px solid #b89667;color:#b7cbd4;font-size:11px}
+@media(max-width:690px){.patch-table{min-width:700px}.patch-era h2{font-size:20px}.patch-jump{gap:7px}}
