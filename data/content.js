@@ -23,6 +23,16 @@ window.WIKI_DATA = {
     {name:'Items & Crafting',icon:'◇',items:[['Items','items'],['Equipment','equipment'],['Gathering','gathering'],['Crafting','crafting']]},
     {name:'Community',icon:'☷',items:[['Patches','patches'],['Wiki Guidelines','contributing'],['About the Wiki','about'],['All Articles','all-articles']]}
   ],
+  // Wiki preview only: these are illustrative milestones, not release announcements.
+  patchCatalog:[
+    {id:'foundations',title:'Foundations — Pre-Alpha',description:'The earliest development era. Versions and artwork are placeholders until an actual release is announced.',entries:[
+      {version:'0.1',title:'Foundations of a New World',summary:'Example major milestone for the first era of development.',date:'Not announced',status:'Sample',statusClass:'planned',subpatches:[{version:'0.1.1',date:'Not announced'},{version:'0.1.2',date:'Not announced'}]},
+      {version:'0.2',title:'The World Takes Shape',summary:'Illustrative future update; scope and details are not confirmed.',date:'Not announced',status:'Concept',statusClass:'planned'}
+    ]},
+    {id:'future',title:'Future Updates',description:'Reserved for future release history as the game grows.',entries:[
+      {version:'0.x',title:'To Be Announced',summary:'Additional development milestones will appear here once confirmed.',date:'Not announced',status:'Unannounced',statusClass:'planned'}
+    ]}
+  ],
   articles:[
     {slug:'races',title:'Races',category:'The World',excerpt:'An overview of the playable peoples of the world.',lead:'Many different peoples inhabit the world, each with their own history, traditions, and place among the civilizations.',sections:[{heading:'Known peoples',text:'The current design includes humans, elves, a short-statured people, and several original peoples. Names and descriptions are still being developed.'},{heading:'Unusual peoples',text:'The Mirrali are a pony-inspired people with a humanoid silhouette, hooved legs, and a culture of their own. Other original peoples will be documented as their designs are finalized.'}],related:['mirrali','civilizations']},
     {slug:'mirrali',title:'Mirrali',category:'Races',excerpt:'A pony-inspired people of the world.',lead:'The Mirrali are one of the world’s unusual peoples. They are not four-legged ponies: their design incorporates a humanoid body and distinctive hooved legs.',infobox:{Type:'Playable race',Status:'Concept in development',Appearance:'Humanoid, hooved legs'},sections:[{heading:'Overview',text:'The Mirrali are being developed as a distinct people rather than a direct copy of another fantasy setting.'},{heading:'Culture',text:'History, homeland, language, and customs are intentionally left open until the game’s worldbuilding is finalized.'}],related:['races','civilizations']},
